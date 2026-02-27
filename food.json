@@ -1,0 +1,21 @@
+[
+    {"title":"burger bowl", "photos": ["photos/burger_bowl_recipe.jpg", "photos/burger_bowl.jpg"]},
+    {"title":"linzenpasta", "photos": ["photos/linzenpasta.jpeg", "photos/linzenpasta_recipe.png"]}, 
+    {"title":"wraps", "photos":["photos/wraps.jpg", "photos/wraps_recipe.png"]},
+    {"title":"pokebowl", "photos":["photos/pokebowl.jpg", "photos/pokebowl_recipe.png"]},
+    {"title":"lasagne", "photos":["photos/lasagne.jpg", "photos/lasagne_recipe.png"]},
+    {"title":"quiche", "photos":["photos/quiche.jpg", "photos/quiche_recipe.png", "photos/quiche_recipe(2).png"]},
+    {"title":"spaghetti", "photos":["photos/spaghetti.jpg", "photos/spaghetti_recipe.png"]},
+    {"title":"linzensoep", "photos":["photos/linzensoep.jpg","photos/linzensoep_recipe.png"]},
+    {"title":"tomatensoep", "photos":["photos/tomatensoep.jpg", "photos/tomatensoep_recipe.png"]},
+    {"title":"pompoensoep", "photos":["photos/pompoensoep.jpg", "photos/pompoensoep_recipe.png"]},
+    {"title":"andijviestamppot", "photos":["photos/andijviestamppot.jpg","photos/andijviestamppot_recipe.png"]},
+    {"title":"rode kool met appeltjes", "photos":["photos/rode_kool_met_appeltjes.jpg","photos/rode_kool_met_appeltjes_recipe.png"]},
+    {"title":"macaroni", "photos":["photos/macaroni.jpg","photos/macaroni_recipe.png"]},
+    {"title":"rijst curry maïs doperwten"},
+    {"title":"erwtensoep", "photos":["photos/erwtensoep.jpg","photos/erwtensoep_recipe.png"]},
+    {"title":"Tortilla's", "photos":["photos/tortilla.jpg","photos/tortilla_recipe.png"]}
+]
+
+
+
