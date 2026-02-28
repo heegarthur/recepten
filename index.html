@@ -1,167 +1,24 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Recepten</title>
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 10px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 1.8rem;
-}
-
-button {
-    display: block;
-    margin: 15px auto;
-    padding: 12px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 6px;
-    background-color: #0077ff;
-    color: white;
-}
-
-.grid {
-    display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-}
-
-.card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.2s;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-.card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.card p {
-    text-align: center;
-    margin: 8px 0 0 0;
-    font-size: 1rem;
-    word-break: break-word;
-}
-
-#detail {
-    margin-top: 20px;
-}
-
-#detail h2 {
-    text-align: center;
-    font-size: 1.5rem;
-}
-
-#detail img {
-    width: 100%;
-    max-width: 300px;
-    margin: 10px auto;
-    display: block;
-    border-radius: 6px;
-}
-
-@media (max-width: 480px) {
-    .card img {
-        height: 100px;
-    }
-    button {
-        width: 90%;
-        font-size: 1rem;
-    }
-    #detail img {
-        max-width: 90%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepten</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>Recepten</h1>
-<button id="randomBtn">Random Recept</button>
+    <h1>Recepten</h1>
+    <button id="randomBtn">Random Recept</button>
 
-<div class="grid" id="recipes"></div>
-<hr>
-<div id="detail"></div>
-
-<script>
-let recipes = [];
-
-async function init() {
-    const res = await fetch("./food.json");
-    if (!res.ok) throw new Error("JSON kon niet geladen worden");
-    recipes = await res.json();
-    render();
-}
-
-function render() {
-    const container = document.getElementById("recipes");
-    container.innerHTML = "";
-
-    recipes.forEach((recipe, index) => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        const img = document.createElement("img");
-        img.src = recipe.photos?.[0] ?? "https://via.placeholder.com/300x200?text=Geen+Foto";
-
-        const title = document.createElement("p");
-        title.textContent = recipe.title;
-
-        card.appendChild(img);
-        card.appendChild(title);
-        card.addEventListener("click", () => showRecipe(index));
-
-        container.appendChild(card);
-    });
-}
-
-function showRecipe(index) {
-    const recipe = recipes[index];
-    const detail = document.getElementById("detail");
-    detail.innerHTML = `<h2>${recipe.title}</h2>`;
-
-    if (!recipe.photos) {
-        detail.innerHTML += "<p>Geen foto's beschikbaar.</p>";
-        return;
-    }
-
-    recipe.photos.forEach(photo => {
-        const img = document.createElement("img");
-        img.src = photo;
-        detail.appendChild(img);
-    });
-
-    detail.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-
-
-
-document.getElementById("randomBtn").addEventListener("click", () => {
-    const i = Math.floor(Math.random() * recipes.length);
-    showRecipe(i);
-
-    document.getElementById("detail").scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-init();
-</script>
+    <div class="grid" id="recipes"></div>
+    <hr>
+    <div id="detail"></div>
+    
+    <script src="script.js"></script>
 
 </body>
+
 </html>
